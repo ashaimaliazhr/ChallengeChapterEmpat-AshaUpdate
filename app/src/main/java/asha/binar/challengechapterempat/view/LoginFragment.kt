@@ -11,54 +11,79 @@ import android.widget.Toast
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import asha.binar.challengechapterempat.R
+import asha.binar.challengechapterempat.databinding.FragmentLoginBinding
 import asha.binar.data.StatusDatabase
-import kotlinx.android.synthetic.main.fragment_login.*
+
 
 class LoginFragment : Fragment() {
-    private var mdb : StatusDatabase? = null
-    private lateinit var prefsLogin : SharedPreferences
-    private lateinit var prefsRegister : SharedPreferences
+    lateinit var binding : FragmentLoginBinding
+    lateinit var share : SharedPreferences
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false)
+        binding = FragmentLoginBinding.inflate(layoutInflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        prefsLogin = requireContext().getSharedPreferences("login", Context.MODE_PRIVATE)
-        prefsRegister = requireContext().getSharedPreferences("register", Context.MODE_PRIVATE)
+        share = requireActivity().getSharedPreferences("ACC", Context.MODE_PRIVATE)!!
 
-        val email = prefsRegister.getString("email","")
-        val pass = prefsRegister.getString("pass","")
-        val nama = prefsRegister.getString("nama","")
-
-        if (prefsLogin.contains("nama")){
-            Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_homeScreenFragment2)
-        }
-
-        tv_daftar.setOnClickListener {
-            it.findNavController().navigate(R.id.action_loginFragment_to_registerFragment3)
-        }
-
-        btn_login.setOnClickListener{
-            val getEmail =et_email.text.toString()
-            val getPas = et_password.text.toString()
-
-
-
-            if (getEmail == email && getPas == pass){
-                prefsLogin.edit().putString("nama", nama).apply()
-                it.findNavController().navigate(R.id.action_loginFragment_to_homeScreenFragment2)
+        binding.btnLogin.setOnClickListener {
+            val username = binding.logUsername.text.toString()
+            val pass = binding.logPassword.text.toString()
+            if (validateUser(username)) {
+                if (validatePass(pass)) {
+                    Toast.makeText(context, "Login Sukses", Toast.LENGTH_SHORT).show()
+                    Navigation.findNavController(binding.root)
+                        .navigate(R.id.action_loginFragment_to_mainFragment)
+                } else {
+                    Toast.makeText(context,
+                        "Username atau Password Anda Salah!",
+                        Toast.LENGTH_LONG).show()
+                }
             }else{
-                Toast.makeText(requireContext(), "No Hp/Password salah", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, "Akun tidak terdaftar", Toast.LENGTH_SHORT).show()
             }
+        }
 
+        binding.btnReg.setOnClickListener {
+            Navigation.findNavController(binding.root).navigate(R.id.action_loginFragment_to_registerFragment3)
         }
     }
 
+
+    //Login Validation
+    private fun validatePass(password: String): Boolean {
+        val passwordShare = share.getString("password", "")
+        if (passwordShare != null){
+            if (passwordShare.isBlank()){
+                return false
+            }else{
+                if (passwordShare == password){
+                    return true
+                }
+            }
+        }
+        return false
+    }
+
+    private fun validateUser(username : String): Boolean {
+        val userShare = share.getString("username","")
+
+        if (userShare != null){
+            if (userShare.isBlank()){
+                return false
+            }else{
+                if (userShare == username){
+                    return true
+                }
+            }
+        }
+        return false
+    }
 }

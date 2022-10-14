@@ -6,14 +6,14 @@ import androidx.room.*
 interface StatusDao {
 
     @Insert
-    fun insertStatus(status: Status) : Long
+    fun insertNote(status: Status)
 
-    @Query("SELECT * FROM Status")
-    fun getAllStatus(): List<Status>
+    @Query("SELECT * FROM Status ORDER BY id DESC")
+    fun getDataNote(): List<Status>
 
     @Delete
-    fun deleteStatus(status: Status) : Int
+    fun deleteNote(note: Status)
 
     @Update
-    fun updateStatus(status: Status) : Int
+    fun updateNote(note: Status)
 }

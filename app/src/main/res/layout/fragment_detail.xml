@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".DetailFragment">
+
+        <TextView
+            android:id="@+id/welcome_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@+id/btn_logout"
+            android:padding="18dp"
+            android:text="Welcome, username!" />
+
+        <TextView
+            android:id="@+id/btn_logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:padding="18dp"
+            android:text="Logout" />
+
+        <TextView
+            android:id="@+id/vDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/welcome_bar"
+            android:gravity="center_horizontal"
+            android:hint="Title"
+            android:textSize="34sp"
+            android:textStyle="bold" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/vDetail"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp">
+
+            <TextView
+                android:id="@+id/vContent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="content"
+                android:padding="5dp" />
+        </androidx.core.widget.NestedScrollView>
+
+
+    </RelativeLayout>
+</layout>

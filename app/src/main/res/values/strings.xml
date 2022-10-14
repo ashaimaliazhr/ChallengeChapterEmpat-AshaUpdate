@@ -5,4 +5,22 @@
     <string name="welcome_username">Welcome, Username!</string>
     <string name="home">Home</string>
     <string name="logout">Logout</string>
+    <string name="judul">Judul</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="add">Add</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="e_mail">E-mail</string>
+    <string name="repeat_password">Repeat Password</string>
+    <string name="title">Title</string>
+    <string name="input_data">Input Data</string>
+    <string name="save">save</string>
+    <string name="edit_data">Edit Data</string>
+    <string name="hapus">Hapus</string>
+    <string name="batal">Batal</string>
+    <string name="update">update</string>
+
 </resources>

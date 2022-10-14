@@ -4,18 +4,13 @@ import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import kotlinx.android.parcel.Parcelize
+import java.io.Serializable
 
 @Entity
-@Parcelize
 data class Status (
     @PrimaryKey(autoGenerate = true)
     var id : Int?,
+    var title : String,
+    var content : String
 
-    @ColumnInfo(name = "nama")
-    var nama : String,
-
-    @ColumnInfo(name = "status")
-    var status:String
-
-) : Parcelable
+) : Serializable

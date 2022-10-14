@@ -20,16 +20,16 @@
         android:src="@drawable/note_transparant" />
 
     <EditText
-        android:id="@+id/et_email"
+        android:id="@+id/logUsername"
         android:layout_width="380dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/kotak"
-        android:hint="Masukkan Email"
+        android:hint="Masukkan Username"
         android:paddingStart="15dp" />
 
     <EditText
-        android:id="@+id/et_password"
+        android:id="@+id/logPassword"
         android:layout_width="380dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
@@ -45,7 +45,7 @@
         android:text="Login" />
 
     <TextView
-        android:id="@+id/tv_daftar"
+        android:id="@+id/btn_reg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Belum punya akun?"

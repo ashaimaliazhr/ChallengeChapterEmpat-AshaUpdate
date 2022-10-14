@@ -21,7 +21,7 @@
         android:layout_marginTop="10dp"/>
 
     <EditText
-        android:id="@+id/input_username"
+        android:id="@+id/regUsername"
         android:layout_width="380dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
@@ -30,7 +30,7 @@
         android:paddingStart="15dp" />
 
     <EditText
-        android:id="@+id/input_email"
+        android:id="@+id/regEmail"
         android:layout_width="380dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
@@ -39,7 +39,7 @@
         android:paddingStart="15dp" />
 
     <EditText
-        android:id="@+id/input_pass"
+        android:id="@+id/regPassword"
         android:layout_width="380dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
@@ -47,7 +47,7 @@
         android:hint="Masukkan Password"
         android:paddingStart="15dp" />
     <EditText
-        android:id="@+id/input_pass_ulang"
+        android:id="@+id/regRepeatPass"
         android:layout_width="380dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
@@ -55,7 +55,7 @@
         android:hint="Masukkan Konfirmasi Password"
         android:paddingStart="15dp" />
     <Button
-        android:id="@+id/btn_regis"
+        android:id="@+id/btn_regsister"
         android:layout_width="380dp"
         android:layout_height="50dp"
         android:layout_marginTop="110dp"

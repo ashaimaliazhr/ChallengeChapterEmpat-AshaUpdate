@@ -7,10 +7,9 @@
     </data>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/card_add"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".AddNoteFragment">
+        tools:context=".EditFragment">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -35,13 +34,22 @@
 
             <TextView
                 android:id="@+id/vAddNotescreen"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/welcome_bar"
-                android:gravity="center_horizontal"
-                android:text="@string/input_data"
+                android:layout_centerHorizontal="true"
+                android:text="@string/edit_data"
                 android:textSize="34sp"
                 android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/idNote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/vAddNotescreen"
+                android:layout_below="@id/welcome_bar"
+                android:hint="ID"
+                />
 
             <EditText
                 android:id="@+id/addTitle"
@@ -73,11 +81,12 @@
 
             <Button
                 android:id="@+id/btn_input_note"
-                android:layout_below="@id/addNote"
-                android:layout_centerHorizontal="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/save" />
+                android:layout_below="@id/addNote"
+                android:layout_centerHorizontal="true"
+                android:text="@string/update" />
         </RelativeLayout>
+
     </androidx.cardview.widget.CardView>
 </layout>
